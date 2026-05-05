@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | RV Global Premium Private Jets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero { height: 40vh; background-image: url('hero_jet.png'); background-attachment: fixed; background-position: center; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .page-hero::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(13,13,13,0.8); z-index: 1; }
+        .page-hero h1 { position: relative; z-index: 2; margin-top: 5rem; }
+    </style>
+</head>
+<body>
+    <header id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="text-decoration: none;">RV Global</a>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span></span><span></span><span></span>
+        </div>
+        <nav id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="contact.html" style="color: var(--accent-highlight); border-bottom: 1px solid var(--accent-highlight);">Contact Us</a>
+            <a href="contact.html" class="btn-primary">Get a Quote</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <h1>Contact Us</h1>
+    </div>
+
+    <section id="contact" class="contact" style="border: none; background-color: var(--primary);">
+        <div class="container">
+            <div class="split-content">
+                <div class="text-content">
+                    <h2>Global Presence</h2>
+                    <p>Our dedicated aviation specialists are available 24/7/365 to assist with your most demanding travel requirements.</p>
+                    
+                    <div style="margin-top: 3rem;">
+                        <h3 style="color: var(--white); font-family: var(--font-body); letter-spacing: 1px;">Asia Pacific Headquarters</h3>
+                        <p style="color: var(--accent-dark); margin-top: 0.5rem;">New Delhi Aviation Hub, Terminal 3 VIP Lounge<br>New Delhi, 110037, India</p>
+                        <p style="color: var(--accent-highlight); margin-top: 0.5rem; font-weight: 600;">+91 98765 43210</p>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h3 style="color: var(--white); font-family: var(--font-body); letter-spacing: 1px;">European Operations</h3>
+                        <p style="color: var(--accent-dark); margin-top: 0.5rem;">Farnborough Airport, Business Aviation Centre<br>Hampshire, GU14 6XA, United Kingdom</p>
+                        <p style="color: var(--accent-highlight); margin-top: 0.5rem; font-weight: 600;">+44 20 7123 4567</p>
+                    </div>
+                </div>
+                
+                <div class="image-content" style="flex: 1.5;">
+                    <div class="contact-box" style="margin: 0;">
+                        <h2 style="font-size: 2rem;">Request a Quote</h2>
+                        <p style="margin-bottom: 2rem;">Begin your bespoke journey today.</p>
+                        <form id="charter-form">
+                            <div class="input-group">
+                                <input type="text" placeholder="Full Name" required>
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" placeholder="Departure City" required>
+                                <input type="text" placeholder="Destination City" required>
+                            </div>
+                            <button type="submit" class="btn-primary full-width">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section style="background-color: var(--primary-light);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem;">
+                    <h3 style="color: var(--white); font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 0.5rem;">How quickly can a jet be ready for departure?</h3>
+                    <p style="color: var(--accent-dark); font-size: 0.95rem;">In most cases, we can have an aircraft fully prepped, crewed, and ready for takeoff within 4 hours of your confirmed request.</p>
+                </div>
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem;">
+                    <h3 style="color: var(--white); font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 0.5rem;">Are pets allowed on board?</h3>
+                    <p style="color: var(--accent-dark); font-size: 0.95rem;">Absolutely. We consider pets part of the family and frequently accommodate them in the cabin on our charters.</p>
+                </div>
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem;">
+                    <h3 style="color: var(--white); font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 0.5rem;">Can I specify catering requests?</h3>
+                    <p style="color: var(--accent-dark); font-size: 0.95rem;">Yes, our concierge team will contact you prior to the flight to arrange fully customized catering to meet any dietary restrictions or preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo" style="text-decoration: none;">RV Global</a>
+                    <p style="color: var(--accent-dark); margin-top: 1rem;">Redefining bespoke luxury travel. Fly where you want, when you want, with unparalleled service.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color: var(--white); margin-bottom: 1rem; font-size: 1.2rem;">Quick Links</h3>
+                    <div class="footer-links-col">
+                        <a href="about.html">About Us</a>
+                        <a href="services.html">Our Services</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color: var(--white); margin-bottom: 1rem; font-size: 1.2rem;">Contact</h3>
+                    <p style="color: var(--accent-dark);">Email: VIP@rvglobal.com<br>Phone: +91 98765 43210<br>Location: New Delhi, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 RV Global. All rights reserved.</div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
