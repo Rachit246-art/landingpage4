@@ -3,150 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RV Global | Premium Private Jets</title>
-    <meta name="description" content="Experience the pinnacle of luxury with RV Global. Exclusive private jet charters across India.">
+    <title>RV Global Aviation | India's Premium Private Jet Charter</title>
+    <meta name="description" content="Experience India's premium private jet and helicopter charter services with RV Global. Fast, luxurious, and hassle-free aviation solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header id="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none;">RV Global</a>
+        <a href="#home" class="logo">RV Global</a>
         <div class="mobile-menu-btn" id="mobile-menu-btn">
             <span></span><span></span><span></span>
         </div>
         <nav id="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Our Services</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="contact.html" class="btn-primary">Get a Quote</a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#fleet">Fleet</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact" class="btn-primary nav-cta">Get Quote</a>
         </nav>
     </header>
 
+    <!-- SECTION 1: HOME (HERO) -->
     <section id="home" class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="videos/hero-video.mp4" type="video/mp4">
         </video>
-        <div class="hero-content">
-            <h1>Elevate Your Journey</h1>
-            <p>Bespoke private jet charters redefining luxury travel within India.</p>
-            <a href="fleet.html" class="btn-outline">Discover Our Fleet</a>
-        </div>
-    </section>
-
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="split-content">
-                <div class="text-content">
-                    <h2>Uncompromising Luxury</h2>
-                    <p>Step into a world where time is yours, and comfort is absolute. From the moment you arrive at the private terminal, your experience is tailored to perfection. Enjoy curated menus, fine champagne, and interiors crafted for the elite.</p>
+        <div class="container hero-container">
+            <div class="hero-content-grid">
+                <div class="hero-text">
+                    <h1>India’s Premium Private Jet Charter Experience</h1>
+                    <p>On-demand private jet and helicopter charter services across India with complete privacy, flexibility, and luxury.</p>
+                    <div class="hero-btns">
+                        <a href="#fleet" class="btn-outline">Discover Our Fleet</a>
+                    </div>
                 </div>
-                <div class="image-content">
-                    <img src="interior_jet.png" alt="Luxurious Private Jet Interior">
+                <div class="hero-form-box">
+                    <div class="lead-form-box">
+                        <h3>Book Your Private Charter</h3>
+                        <form id="quick-charter-form">
+                            <div class="input-grid">
+                                <input type="text" placeholder="Full Name" required>
+                                <input type="tel" placeholder="Phone Number" required>
+                                <input type="text" placeholder="Departure City" required>
+                                <input type="text" placeholder="Destination" required>
+                                <input type="number" placeholder="Passenger Count" required>
+                                <input type="text" placeholder="Travel Date (DD/MM/YY)" onfocus="(this.type='date')" required>
+                            </div>
+                            <button type="submit" class="btn-primary full-width">Request Charter Quote</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="lead-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-text">Successful Charters</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">PAN</span>
+                    <span class="stat-text">India Operations</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-text">Concierge Support</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Elite</span>
+                    <span class="stat-text">Luxury Fleet Access</span>
+                </div>
+            </div>
+            <div class="trust-markers">
+                <p>Trusted & Certified By</p>
+                <div class="marker-logos">
+                    <span>DGCA COMPLIANT</span>
+                    <span>ISO 9001:2015</span>
+                    <span>Aviation Safety Certified</span>
+                    <span>Premium Partner Network</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SERVICES -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Aviation Services</h2>
+                <p>Tailored flight solutions for every requirement.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card-premium">
+                    <div class="service-img">
+                        <img src="interior_jet.png" alt="Private Jet Charter">
+                    </div>
+                    <div class="service-info">
+                        <h3>Private Jet Charter</h3>
+                        <p>Luxury and business travel across India. Bespoke schedules and ultimate privacy.</p>
+                    </div>
+                </div>
+                <div class="service-card-premium">
+                    <div class="service-img">
+                        <img src="fleet_jet.png" alt="Helicopter Charter">
+                    </div>
+                    <div class="service-info">
+                        <h3>Helicopter Charter</h3>
+                        <p>Fast intercity and regional travel. Access remote locations and bypass traffic.</p>
+                    </div>
+                </div>
+                <div class="service-card-premium">
+                    <div class="service-img">
+                        <img src="exec_travel.png" alt="Corporate Travel">
+                    </div>
+                    <div class="service-info">
+                        <h3>Corporate Travel</h3>
+                        <p>Efficient executive movement solutions. Transform travel time into productive time.</p>
+                    </div>
+                </div>
+                <div class="service-card-premium">
+                    <div class="service-img">
+                        <img src="med_evac.png" alt="Medical Emergency Flights">
+                    </div>
+                    <div class="service-info">
+                        <h3>Medical Emergency Flights</h3>
+                        <p>Rapid air ambulance coordination. Life-saving response when every second counts.</p>
+                    </div>
+                </div>
+                <div class="service-card-premium">
+                    <div class="service-img">
+                        <img src="interior_jet.png" alt="Group Charter">
+                    </div>
+                    <div class="service-info">
+                        <h3>Group Charter</h3>
+                        <p>Customized travel for teams and events. Seamless logistics for larger parties.</p>
+                    </div>
+                </div>
+                <div class="service-card-premium">
+                    <div class="service-img">
+                        <img src="hero_jet.png" alt="Religious & Leisure Travel">
+                    </div>
+                    <div class="service-info">
+                        <h3>Religious & Leisure Travel</h3>
+                        <p>Seamless connectivity to pilgrimage sites and holiday destinations with luxury comfort.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: DESTINATIONS -->
+    <section id="destinations" class="destinations" style="background-color: var(--primary-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Charter Routes</h2>
+                <p>Fast connectivity across major Indian cities.</p>
+            </div>
+            <div class="routes-grid">
+                <div class="route-card">
+                    <div class="route-cities">Bangalore <span>&rarr;</span> Mumbai</div>
+                    <div class="route-time">1h 45m</div>
+                </div>
+                <div class="route-card">
+                    <div class="route-cities">Delhi <span>&rarr;</span> Bangalore</div>
+                    <div class="route-time">2h 30m</div>
+                </div>
+                <div class="route-card">
+                    <div class="route-cities">Mumbai <span>&rarr;</span> Hyderabad</div>
+                    <div class="route-time">1h 15m</div>
+                </div>
+                <div class="route-card">
+                    <div class="route-cities">Delhi <span>&rarr;</span> Mumbai</div>
+                    <div class="route-time">2h 00m</div>
+                </div>
+                <div class="route-card">
+                    <div class="route-cities">Bangalore <span>&rarr;</span> Goa</div>
+                    <div class="route-time">1h 00m</div>
+                </div>
+                <div class="route-card">
+                    <div class="route-cities">Ahmedabad <span>&rarr;</span> Kochi</div>
+                    <div class="route-time">2h 15m</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FLEET (Moved according to nav bar) -->
     <section id="fleet" class="fleet">
         <div class="container">
-            <div class="split-content reverse">
-                <div class="text-content">
-                    <h2>A Class Above</h2>
-                    <p>Our meticulously maintained fleet represents the zenith of aviation technology. Whether it's a short hop to Mumbai or a cross-country flight, arrive faster, safer, and in unparalleled style.</p>
-                    <ul class="fleet-features">
-                        <li><span>✔</span> Latest avionics</li>
-                        <li><span>✔</span> Unmatched speed</li>
-                        <li><span>✔</span> Supreme privacy</li>
-                    </ul>
+            <div class="section-header">
+                <h2>Luxury Fleet Categories</h2>
+                <p>The right aircraft for every mission.</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="fleet-card">
+                    <img src="fleet_jet.png" alt="Light Jet">
+                    <div class="fleet-info">
+                        <h3>Light Jets</h3>
+                        <p>Capacity: 4-7 Passengers</p>
+                        <p>Range: 1,500 nm</p>
+                        <span class="fleet-tag">Perfect for Regional</span>
+                    </div>
                 </div>
-                <div class="image-content">
-                    <img src="fleet_jet.png" alt="Sleek Modern Private Jet">
+                <div class="fleet-card">
+                    <img src="interior_jet.png" alt="Mid-Size Jet">
+                    <div class="fleet-info">
+                        <h3>Mid-Size Jets</h3>
+                        <p>Capacity: 7-9 Passengers</p>
+                        <p>Range: 2,500 nm</p>
+                        <span class="fleet-tag">Transcontinental</span>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <img src="hero_jet.png" alt="Heavy Jet">
+                    <div class="fleet-info">
+                        <h3>Heavy Jets</h3>
+                        <p>Capacity: 10-16 Passengers</p>
+                        <p>Range: 4,000+ nm</p>
+                        <span class="fleet-tag">Ultra Luxury</span>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <img src="med_evac.png" alt="Helicopter">
+                    <div class="fleet-info">
+                        <h3>Helicopters</h3>
+                        <p>Capacity: 3-6 Passengers</p>
+                        <p>Range: 350 nm</p>
+                        <span class="fleet-tag">Point to Point</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="why-choose-us" style="background-color: var(--primary-light);">
+    <!-- SECTION 5: WHY US -->
+    <section id="why-us" class="why-fly" style="background-color: var(--primary-light);">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <h2>Why Choose RV Global</h2>
-                <p style="color: var(--accent-dark); margin-top: 1rem;">The definitive standard in private aviation.</p>
+            <div class="section-header">
+                <h2>Why Choose Private Aviation</h2>
+                <p>Luxury and efficiency redefined.</p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; text-align: center;">
-                <div class="service-card" style="background: var(--primary); border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); overflow: hidden; display: flex; flex-direction: column;">
-                    <img src="popup.png" alt="Ultimate Privacy" style="width: 100%; height: 240px; object-fit: cover; opacity: 0.8;">
-                    <div style="padding: 2.5rem 2rem;">
-                        <h3 style="color: var(--accent-highlight); margin-bottom: 1rem;">Ultimate Privacy</h3>
-                        <p style="color: var(--accent-dark);">Bypass crowded terminals and fly with complete discretion from private FBOs.</p>
+            <div class="why-points-grid">
+                <div class="why-card">
+                    <img src="exec_travel.png" alt="Zero Airport Hassles">
+                    <div class="why-card-info">
+                        <h3>Zero Airport Hassles</h3>
+                        <p>Bypass long security lines and crowded terminals. Arrive just 15 minutes before departure.</p>
                     </div>
                 </div>
-                <div class="service-card" style="background: var(--primary); border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); overflow: hidden; display: flex; flex-direction: column;">
-                    <img src="hero_jet.png" alt="Global Reach" style="width: 100%; height: 240px; object-fit: cover; opacity: 0.8;">
-                    <div style="padding: 2.5rem 2rem;">
-                        <h3 style="color: var(--accent-highlight); margin-bottom: 1rem;">Global Reach</h3>
-                        <p style="color: var(--accent-dark);">Access thousands of airports worldwide that commercial airlines simply cannot reach.</p>
+                <div class="why-card">
+                    <img src="fleet_jet.png" alt="Flexible Scheduling">
+                    <div class="why-card-info">
+                        <h3>Flexible Scheduling</h3>
+                        <p>Fly on your time. Change your departure time or destination at a moment's notice.</p>
                     </div>
                 </div>
-                <div class="service-card" style="background: var(--primary); border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); overflow: hidden; display: flex; flex-direction: column;">
-                    <img src="interior_jet.png" alt="Tailored Experience" style="width: 100%; height: 240px; object-fit: cover; opacity: 0.8;">
-                    <div style="padding: 2.5rem 2rem;">
-                        <h3 style="color: var(--accent-highlight); margin-bottom: 1rem;">Tailored Experience</h3>
-                        <p style="color: var(--accent-dark);">From fine dining to specific onboard amenities, your journey is customized to you.</p>
+                <div class="why-card">
+                    <img src="interior_jet.png" alt="Complete Privacy">
+                    <div class="why-card-info">
+                        <h3>Complete Privacy</h3>
+                        <p>Enjoy the cabin to yourself or your team. Conduct meetings or relax in total peace.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <img src="interior_jet.png" alt="Luxury Comfort">
+                    <div class="why-card-info">
+                        <h3>Luxury Comfort</h3>
+                        <p>Bespoke catering, spacious cabins, and personalized service from our dedicated crew.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <img src="hero_jet.png" alt="Faster Connectivity">
+                    <div class="why-card-info">
+                        <h3>Faster Connectivity</h3>
+                        <p>Access 10x more airports than commercial airlines, landing closer to your final destination.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <img src="exec_travel.png" alt="Bespoke Concierge">
+                    <div class="why-card-info">
+                        <h3>Bespoke Concierge</h3>
+                        <p>Dedicated ground support and personalized arrangements for every aspect of your trip.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="featured-in" style="padding: 4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); background-color: var(--primary);">
+    <!-- SECTION 6: FAQS -->
+    <section id="faq" class="faq-section">
         <div class="container">
-            <p style="text-align: center; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 2rem;">As Featured In</p>
-            <div class="logo-row" style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; opacity: 0.5;">
-                <h3 style="color: var(--white); font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 2px;">Forbes</h3>
-                <h3 style="color: var(--white); font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 2px;">GQ Luxury</h3>
-                <h3 style="color: var(--white); font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 2px;">Robb Report</h3>
-                <h3 style="color: var(--white); font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 2px;">Vogue</h3>
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How much does private charter cost in India?</h3>
+                    <p>Costs vary based on aircraft type and duration. Contact us for a precise, all-inclusive quote tailored to your needs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How quickly can I book?</h3>
+                    <p>In most cases, we can have an aircraft ready within 4 hours of your confirmed request.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are pets allowed?</h3>
+                    <p>Absolutely. We consider pets part of the family and frequently accommodate them in the cabin.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I customize catering?</h3>
+                    <p>Yes, our concierge team will arrange fully customized catering to meet any dietary restrictions or preferences.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which cities do you operate in?</h3>
+                    <p>We operate PAN India, with access to all major airports and private terminals across the country.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What safety standards do you follow?</h3>
+                    <p>All our aircraft are DGCA compliant and maintained to international safety standards. Our crew undergoes rigorous training and periodic safety audits.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- SECTION 7: TESTIMONIALS -->
     <section class="testimonials" style="background-color: var(--primary-light);">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <h2>Client Experiences</h2>
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Experiences beyond expectations.</p>
             </div>
-            <div class="testimonial-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                <div class="testimonial-card" style="padding: 3rem; background: var(--primary); border-left: 3px solid var(--accent-highlight); box-shadow: 0 15px 30px rgba(0,0,0,0.5);">
-                    <p style="font-style: italic; color: var(--accent); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">"RV Global completely transformed how our executive team travels. The level of privacy and efficiency is unmatched in the industry."</p>
-                    <h4 style="color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">- Arthur P., CEO</h4>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"RV Global completely transformed how our executive team travels. The level of privacy and efficiency is unmatched."</p>
+                    <h4>- Arthur P., CEO</h4>
                 </div>
-                <div class="testimonial-card" style="padding: 3rem; background: var(--primary); border-left: 3px solid var(--accent-highlight); box-shadow: 0 15px 30px rgba(0,0,0,0.5);">
-                    <p style="font-style: italic; color: var(--accent); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">"From the moment we arrived at the private terminal, everything was flawless. The bespoke dining menu was a spectacular touch."</p>
-                    <h4 style="color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">- Elena M., Entrepreneur</h4>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"From the moment we arrived at the private terminal, everything was flawless. The bespoke dining was spectacular."</p>
+                    <h4>- Elena M., Entrepreneur</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"The fastest way to travel regional. Their helicopter service saved me 6 hours of road travel. Highly professional crew."</p>
+                    <h4>- Vikram S., Investor</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Discretion and luxury at its finest. RV Global is the only charter service we trust for our high-profile guests."</p>
+                    <h4>- Sarah L., Luxury Travel Consultant</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- FINAL CTA -->
+    <section id="contact" class="final-cta">
         <div class="container">
-            <div class="contact-box">
-                <h2>Request a Charter</h2>
-                <p>Begin your bespoke journey today. Connect with our dedicated concierge.</p>
-                <form id="charter-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" placeholder="Departure City" required>
-                        <input type="text" placeholder="Destination City" required>
-                    </div>
-                    <button type="submit" class="btn-primary full-width">Submit Inquiry</button>
-                </form>
+            <div class="cta-box">
+                <h2>Experience Luxury Aviation Without Compromise</h2>
+                <p>Begin your bespoke journey today. Connect with our dedicated aviation specialists.</p>
+                <a href="#home" class="btn-primary">Request Quote</a>
             </div>
         </div>
     </section>
@@ -155,21 +381,21 @@
         <div class="container">
             <div class="footer-content-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="footer-logo" style="text-decoration: none;">RV Global</a>
-                    <p style="color: var(--accent-dark); margin-top: 1rem;">Redefining bespoke luxury travel. Fly where you want, when you want, with unparalleled service.</p>
+                    <a href="#home" class="footer-logo">RV Global</a>
+                    <p>Redefining bespoke luxury travel. Fly where you want, when you want, with unparalleled service.</p>
                 </div>
                 <div class="footer-col">
-                    <h3 style="color: var(--white); margin-bottom: 1rem; font-size: 1.2rem;">Quick Links</h3>
+                    <h3>Quick Links</h3>
                     <div class="footer-links-col">
-                        <a href="about.html">About Us</a>
-                        <a href="services.html">Our Services</a>
-                        <a href="fleet.html">Our Fleet</a>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="#home">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#fleet">Our Fleet</a>
+                        <a href="#faq">FAQs</a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3 style="color: var(--white); margin-bottom: 1rem; font-size: 1.2rem;">Contact</h3>
-                    <p style="color: var(--accent-dark);">Email: VIP@rvglobal.com<br>Phone: +91 98765 43210<br>Location: New Delhi, India</p>
+                    <h3>Contact</h3>
+                    <p>Email: VIP@rvglobal.com<br>Phone: +91 98765 43210<br>Location: New Delhi, India</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -193,12 +419,17 @@
                 <h2>Exclusive Access</h2>
                 <p>Join our elite list and receive a luxury brochure along with tailored charter rates.</p>
                 <form id="offer-form">
-                    <input type="email" placeholder="Your Email Address" required style="margin-bottom: 1rem;">
+                    <input type="email" placeholder="Your Email Address" required>
                     <button type="submit" class="btn-primary full-width">Unlock Access</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.476 2.014 7.787L0 32l8.473-2.188A15.892 15.892 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.91 22.912c-.368 1.037-1.842 1.884-2.532 2.008-.69.124-1.542.23-4.542-.992-3.001-1.222-4.939-4.267-5.088-4.468-.15-.201-1.218-1.621-1.218-3.092s.775-2.195 1.05-2.496c.275-.301.6-.376.8-.376s.4-.025.575-.025c.175 0 .425-.075.65.45.225.526.775 1.884.85 2.034s.125.326.025.526c-.1.2-.15.326-.3.501s-.325.376-.45.501c-.125.125-.262.263-.112.513.15.25.666 1.101 1.428 1.779.979.873 1.801 1.144 2.051 1.269.25.125.4.1.55-.075s.65-.752.825-1.003c.175-.25.35-.2.575-.1s1.428.677 1.678.802c.25.125.425.188.488.3.062.112.062.651-.306 1.688z" fill="#fff"/></svg>
+    </a>
 
     <script src="script.js"></script>
 </body>
