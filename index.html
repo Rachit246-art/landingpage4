@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Replace with your actual Public Key from EmailJS
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
 </head>
 <body>
     <header id="navbar">
@@ -21,11 +28,10 @@
         <nav id="nav-links">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
-            <a href="#destinations">Destinations</a>
             <a href="#fleet">Fleet</a>
             <a href="#why-us">Why Us</a>
             <a href="#faq">FAQs</a>
-            <a href="https://wa.me/919876543210?text=Hi%20RV%20Global%20Aviation%2C%20I%20would%20like%20to%20request%20a%20charter%20quote." class="btn-primary nav-cta" target="_blank">Get Quote</a>
+            <a href="javascript:void(0)" class="btn-primary nav-cta trigger-chatbot">Get Quote</a>
         </nav>
     </header>
 
@@ -378,7 +384,7 @@
             <div class="cta-box">
                 <h2>Experience Luxury Aviation Without Compromise</h2>
                 <p>Begin your bespoke journey today. Connect with our dedicated aviation specialists.</p>
-                <a href="https://wa.me/919876543210?text=Hi%20RV%20Global%20Aviation%2C%20I%20would%20like%20to%20request%20a%20charter%20quote." class="btn-primary" target="_blank">Request Quote</a>
+                <a href="javascript:void(0)" class="btn-primary trigger-chatbot">Request Quote</a>
             </div>
         </div>
     </section>
@@ -435,10 +441,36 @@
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.476 2.014 7.787L0 32l8.473-2.188A15.892 15.892 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.91 22.912c-.368 1.037-1.842 1.884-2.532 2.008-.69.124-1.542.23-4.542-.992-3.001-1.222-4.939-4.267-5.088-4.468-.15-.201-1.218-1.621-1.218-3.092s.775-2.195 1.05-2.496c.275-.301.6-.376.8-.376s.4-.025.575-.025c.175 0 .425-.075.65.45.225.526.775 1.884.85 2.034s.125.326.025.526c-.1.2-.15.326-.3.501s-.325.376-.45.501c-.125.125-.262.263-.112.513.15.25.666 1.101 1.428 1.779.979.873 1.801 1.144 2.051 1.269.25.125.4.1.55-.075s.65-.752.825-1.003c.175-.25.35-.2.575-.1s1.428.677 1.678.802c.25.125.425.188.488.3.062.112.062.651-.306 1.688z" fill="#fff"/></svg>
-    </a>
+    <!-- Chatbot Floating Button -->
+    <button id="chatbot-toggle" class="chatbot-float" aria-label="Open Chatbot">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
+            <path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="bot-info">
+                <img src="logo.png" alt="RV Global" class="bot-logo">
+                <div class="bot-details">
+                    <span class="bot-name">Aviation Specialist</span>
+                    <span class="bot-status">Online</span>
+                </div>
+            </div>
+            <button id="chatbot-close" class="chatbot-close">&times;</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages">
+            <!-- Messages will be injected here -->
+        </div>
+        <div id="chatbot-input-container" class="chatbot-input-container hidden">
+            <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
+            <button id="chatbot-send">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg>
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

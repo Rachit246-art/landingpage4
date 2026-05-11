@@ -201,3 +201,244 @@ document.querySelectorAll('section, .service-card-premium, .fleet-card, .why-car
     el.classList.add('reveal');
     revealObserver.observe(el);
 });
+
+// CHATBOT LOGIC
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotClose = document.getElementById('chatbot-close');
+const chatbotWindow = document.getElementById('chatbot-window');
+const chatbotMessages = document.getElementById('chatbot-messages');
+const chatbotInputContainer = document.getElementById('chatbot-input-container');
+const chatbotInput = document.getElementById('chatbot-input');
+const chatbotSend = document.getElementById('chatbot-send');
+
+let chatState = {
+    step: 'welcome',
+    data: {}
+};
+
+const chatFlow = {
+    welcome: {
+        bot: "Welcome to RV Global Aviation. We specialize in premium private jet, helicopter, and international charter services for business leaders, VIP travelers, leisure trips, and urgent aviation requirements. <br><br> How may we assist you today?",
+        buttons: ["Domestic Charter", "International Charter", "Helicopter Charter", "Corporate Travel", "Pilgrimage Charter", "Emergency Charter", "Speak to Aviation Expert"],
+        nextStep: 'step1'
+    },
+    step1: {
+        bot: "Please select your travel requirement.",
+        buttons: ["One Way", "Round Trip", "Multi-City", "Same Day Return", "Urgent Departure"],
+        nextStep: 'step2'
+    },
+    step2: {
+        bot: "Please enter your departure city or airport.",
+        inputType: 'text',
+        nextStep: 'step3'
+    },
+    step3: {
+        bot: "Please enter your destination city or airport.",
+        inputType: 'text',
+        nextStep: 'step4'
+    },
+    step4: {
+        bot: "When would you like to fly?",
+        inputType: 'date',
+        nextStep: 'step5'
+    },
+    step5: {
+        bot: "Please select your preferred departure timing.",
+        buttons: ["Early Morning", "Morning", "Afternoon", "Evening", "Flexible Timing"],
+        nextStep: 'step6'
+    },
+    step6: {
+        bot: "How many passengers will be traveling?",
+        buttons: ["1-3 Passengers", "4-6 Passengers", "7-10 Passengers", "10+ Passengers"],
+        nextStep: 'step7'
+    },
+    step7: {
+        bot: "Please select the purpose of your charter.",
+        buttons: ["Business Travel", "Leisure / Family", "Religious Trip", "Wedding / Event", "Medical Emergency", "VIP Movement", "Corporate Team Travel"],
+        nextStep: 'step8'
+    },
+    step8: {
+        bot: "Do you have a preferred aircraft category?",
+        buttons: ["Light Jet", "Mid-Size Jet", "Heavy Jet", "Turbo Prop", "Helicopter", "Suggest Best Option"],
+        nextStep: 'step9'
+    },
+    step9: {
+        bot: "Would you require any additional premium services?",
+        buttons: ["Luxury Ground Transfer", "In-Flight Catering", "Hotel Assistance", "Visa Assistance", "Concierge Services", "Fast Track Airport Assistance", "No Additional Services"],
+        nextStep: 'step10'
+    },
+    step10: {
+        bot: "Please select your preferred charter experience.",
+        buttons: ["Most Efficient Option", "Premium Comfort", "Ultra Luxury Experience"],
+        nextStep: 'step11'
+    },
+    step11: {
+        bot: "Please share your details so our aviation specialist can prepare aircraft availability and charter quotations.",
+        inputType: 'form',
+        nextStep: 'final'
+    },
+    final: {
+        bot: "Thank you for choosing RV Global Aviation. <br><br> Your charter request has been successfully submitted. Our aviation specialist will contact you shortly with suitable aircraft options, availability, and estimated charter pricing. <br><br> For urgent departures, our team prioritizes immediate assistance."
+    }
+};
+
+function addMessage(text, type) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${type}-message`;
+    msgDiv.innerHTML = text;
+    chatbotMessages.appendChild(msgDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function addButtons(buttons) {
+    const btnContainer = document.createElement('div');
+    btnContainer.className = 'chat-buttons';
+    buttons.forEach(btnText => {
+        const btn = document.createElement('button');
+        btn.className = 'chat-btn';
+        btn.innerText = btnText;
+        btn.onclick = () => handleUserInput(btnText);
+        btnContainer.appendChild(btn);
+    });
+    chatbotMessages.appendChild(btnContainer);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function addForm() {
+    const form = document.createElement('form');
+    form.className = 'chat-form';
+    form.innerHTML = `
+        <input type="text" id="chat-name" placeholder="Full Name" required>
+        <input type="tel" id="chat-phone" placeholder="Mobile Number" required>
+        <input type="email" id="chat-email" placeholder="Email Address" required>
+        <input type="text" id="chat-company" placeholder="Company Name (Optional)">
+        <button type="submit" class="chat-submit">Get Charter Quote</button>
+    `;
+    form.onsubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            name: document.getElementById('chat-name').value,
+            phone: document.getElementById('chat-phone').value,
+            email: document.getElementById('chat-email').value,
+            company: document.getElementById('chat-company').value
+        };
+        handleUserInput(`Submitted: ${data.name}`, data);
+    };
+    chatbotMessages.appendChild(form);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function processStep(stepKey) {
+    const step = chatFlow[stepKey];
+    if (!step) return;
+
+    chatState.step = stepKey;
+    
+    // Add bot message
+    setTimeout(() => {
+        addMessage(step.bot, 'bot');
+        
+        // Handle next interaction type
+        if (step.buttons) {
+            addButtons(step.buttons);
+            chatbotInputContainer.classList.add('hidden');
+        } else if (step.inputType === 'text') {
+            chatbotInputContainer.classList.remove('hidden');
+            chatbotInput.type = 'text';
+            chatbotInput.focus();
+        } else if (step.inputType === 'date') {
+            chatbotInputContainer.classList.remove('hidden');
+            chatbotInput.type = 'date';
+            chatbotInput.focus();
+        } else if (step.inputType === 'form') {
+            addForm();
+            chatbotInputContainer.classList.add('hidden');
+        } else {
+            chatbotInputContainer.classList.add('hidden');
+        }
+    }, 500);
+}
+
+function handleUserInput(input, formData = null) {
+    // Add user message
+    addMessage(input, 'user');
+    
+    // Store data if needed
+    chatState.data[chatState.step] = formData || input;
+    
+    // Process next step
+    const currentStep = chatFlow[chatState.step];
+    if (currentStep && currentStep.nextStep) {
+        if (chatState.step === 'step11') {
+            sendLeadEmail(chatState.data);
+        }
+        processStep(currentStep.nextStep);
+    }
+}
+
+function sendLeadEmail(data) {
+    // Format the data for the email
+    const emailParams = {
+        customer_name: data.step11.name,
+        customer_phone: data.step11.phone,
+        customer_email: data.step11.email,
+        company: data.step11.company || 'N/A',
+        service_type: data.welcome,
+        charter_type: data.step1,
+        departure: data.step2,
+        destination: data.step3,
+        travel_date: data.step4,
+        preferred_time: data.step5,
+        passengers: data.step6,
+        purpose: data.step7,
+        aircraft: data.step8,
+        additional_services: data.step9,
+        experience: data.step10
+    };
+
+    console.log("Sending Lead Data:", emailParams);
+
+    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual IDs from EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+}
+
+chatbotToggle.onclick = () => {
+    chatbotWindow.classList.toggle('active');
+    if (chatbotWindow.classList.contains('active') && chatbotMessages.children.length === 0) {
+        processStep('welcome');
+    }
+};
+
+// Handle external triggers
+document.querySelectorAll('.trigger-chatbot').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        chatbotWindow.classList.add('active');
+        if (chatbotMessages.children.length === 0) {
+            processStep('welcome');
+        }
+    });
+});
+
+chatbotClose.onclick = () => {
+    chatbotWindow.classList.remove('active');
+};
+
+chatbotSend.onclick = () => {
+    const val = chatbotInput.value.trim();
+    if (val) {
+        chatbotInput.value = '';
+        handleUserInput(val);
+    }
+};
+
+chatbotInput.onkeypress = (e) => {
+    if (e.key === 'Enter') {
+        chatbotSend.click();
+    }
+};
